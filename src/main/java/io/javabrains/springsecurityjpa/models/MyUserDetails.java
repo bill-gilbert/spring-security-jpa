@@ -15,10 +15,12 @@ public class MyUserDetails implements UserDetails {
 
     private String userName;
     private String password;
+    private int id;
     private boolean active;
     private List<GrantedAuthority> authorities;
 
     public MyUserDetails(User user) {
+        this.id = user.getId();
         this.userName = user.getUserName();
         this.password = user.getPassword();
         this.active = user.isActive();
